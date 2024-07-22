@@ -12,5 +12,5 @@ function submitQuiz() {
             }
 
             // Display score and name
-            alert(`Name: ${name}\nYour score: ${score * 20}`);
+            alert(`Hello, ${name}! Your score is ${score * 20}`);
         }
