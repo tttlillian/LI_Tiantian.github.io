@@ -1,5 +1,32 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+tr {
+    border: 8px solid white; 
+}
+td {
+    border: 5px solid white; 
+  
+}
+
 w1 {
     color: white;
     font-family: "Arial Black", Gadget, sans-serif;
     font-weight: bold;
+    font-size: 48px;
 }
+
+    a {text-decoration: none;；color: blue; }
+    a:link { color: blue; }         
+    a:visited { color: purple; } 
+    a:hover { color: green; }
+
+.float-img {
+    float: left;
+    margin-right: 15px; 
+    margin-bottom: 15px; 
+}
+
