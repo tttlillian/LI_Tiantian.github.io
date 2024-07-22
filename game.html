@@ -1,1 +1,84 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Game</h1>
+        <form id="quizForm">
+            <div class="question">
+                <h3>Question 1: What is the capital of France?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="0"> London</label>
+                    <label><input type="radio" name="q1" value="0"> Berlin</label>
+                    <label><input type="radio" name="q1" value="1"> Paris</label>
+                    <label><input type="radio" name="q1" value="0"> Madrid</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 2: Which planet is known as the Red Planet?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="0"> Earth</label>
+                    <label><input type="radio" name="q2" value="1"> Mars</label>
+                    <label><input type="radio" name="q2" value="0"> Jupiter</label>
+                    <label><input type="radio" name="q2" value="0"> Venus</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 3: Who wrote "To Kill a Mockingbird"?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="1"> Harper Lee</label>
+                    <label><input type="radio" name="q3" value="0"> Mark Twain</label>
+                    <label><input type="radio" name="q3" value="0"> Ernest Hemingway</label>
+                    <label><input type="radio" name="q3" value="0"> J.K. Rowling</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 4: What is the chemical symbol for gold?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="0"> Ag</label>
+                    <label><input type="radio" name="q4" value="1"> Au</label>
+                    <label><input type="radio" name="q4" value="0"> Pb</label>
+                    <label><input type="radio" name="q4" value="0"> Fe</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 5: What is the largest ocean on Earth?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="0"> Atlantic Ocean</label>
+                    <label><input type="radio" name="q5" value="0"> Indian Ocean</label>
+                    <label><input type="radio" name="q5" value="0"> Arctic Ocean</label>
+                    <label><input type="radio" name="q5" value="1"> Pacific Ocean</label>
+                </div>
+            </div>
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required="">
+            </div>
+            <input type="button" class="submit-btn" value="Submit" onclick="submitQuiz()">
+        </form>
+    </div>
 
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const name = document.getElementById('name').value;
+            let score = 0;
+
+            // Calculate score
+            for (let i = 1; i <= 5; i++) {
+                const selected = form.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    score += parseInt(selected.value);
+                }
+            }
+
+            // Display score and name
+            alert(`Name: ${name}\nYour score: ${score * 20}`);
+        }
+    </script>
+
+
+</body></html>
